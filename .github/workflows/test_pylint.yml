@@ -19,13 +19,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
         pip install pylint_odoo
+        pip install git+https://github.com/msakac/pylint_nivels
         git pull
     - name: Analysing the code with pylintrc_easy_peasy
       run: |
-        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc_easy_peasy $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
+        pylint_nivels .pylintrc_easy_peasy
     - name: Analysing the code with pylint
       run: |
-        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
+        pylint_nivels .pylintrc
     - name: Analysing the code with pylintrc_quality_nerd
       run: |
-        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc_quality_nerd $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
+        pylint_nivels .pylintrc_quality_nerd
