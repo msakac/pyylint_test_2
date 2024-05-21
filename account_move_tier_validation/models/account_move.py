@@ -3,7 +3,7 @@
 
 from odoo import _, api, models
 
-
+faking bič
 class AccountMove(models.Model):
     _name = "account.move"
     _inherit = ["account.move", "tier.validation"]
