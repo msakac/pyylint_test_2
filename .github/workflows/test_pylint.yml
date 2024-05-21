@@ -23,10 +23,10 @@ jobs:
         git pull
     - name: Analysing the code with pylintrc_easy_peasy
       run: |
-        pylint_nivels .pylintrc_easy_peasy
+        pylint_nivels path_to_pylintrc
     - name: Analysing the code with pylint
       run: |
-        pylint_nivels .pylintrc
+        pylint_nivels path_to_pylintrc
     - name: Analysing the code with pylintrc_quality_nerd
       run: |
-        pylint_nivels .pylintrc_quality_nerd
+        pylint_nivels path_to_pylintrc
