@@ -1,0 +1,31 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+        pip install pylint_odoo
+        git pull
+    - name: Analysing the code with pylintrc_easy_peasy
+      run: |
+        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc_easy_peasy $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
+    - name: Analysing the code with pylint
+      run: |
+        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
+    - name: Analysing the code with pylintrc_quality_nerd
+      run: |
+        pylint --load-plugins=pylint_odoo --rcfile=conf/.pylintrc_quality_nerd $(git diff --name-only --diff-filter=ACMRTUXB origin/11.0 | grep  -E "(.py$)") --output-format=colorized
