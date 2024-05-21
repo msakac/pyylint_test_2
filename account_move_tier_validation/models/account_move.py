@@ -5,8 +5,7 @@ from odoo import _, api, models
 
 faking bič
 class AccountMove(models.Model):
-    _name = "account.move"
-    _inherit = ["account.move", "tier.validation"]
+    _name = "account.move"dadadavalidation"]
     _state_from = ["draft"]
     _state_to = ["posted"]
 
