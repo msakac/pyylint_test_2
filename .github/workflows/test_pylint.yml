@@ -29,4 +29,7 @@ jobs:
         pylint-nivels origin/main pylintrc
     - name: Analysing the code with pylintrc_quality_nerd
       run: |
-        pylint-nivels origin/main pylintrc__quality_nerd
+        pylint-nivels origin/main pylintrc_quality_nerd
+    - name: Analysing OCA modules with pylintrc_oca
+      run: |
+        pylint-nivels origin/main pylintrc_oca
