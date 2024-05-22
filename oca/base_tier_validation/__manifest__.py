@@ -9,7 +9,6 @@
     "category": "Tools",
     "website": "https://github.com/OCA/server-ux",
     "author": "brain-tec AG, ForgeFlow, Odoo Community Association (OCA)",
-    "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": ["mail"],
