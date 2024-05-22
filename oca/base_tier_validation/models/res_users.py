@@ -8,7 +8,8 @@ class Users(models.Model):
     _inherit = "res.users"
 
     review_ids = fields.Many2many(string="Reviews", comodel_name="tier.review")
-
+    duda = fields.Char(string="Duda")
+    guga = fields.Char(string="Guga")
     @api.model
     def review_user_count(self):
         user_reviews = {}
