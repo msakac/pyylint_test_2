@@ -8,7 +8,6 @@
     "category": "Accounts",
     "website": "https://github.com/OCA/account-invoicing",
     "author": "PESOL, Odoo Community Association (OCA)",
-    "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": ["account", "base_tier_validation"],
