@@ -1,7 +1,7 @@
 # Copyright <2020> PESOL <info@pesol.es>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 
-from odoo import _, api, models
+from odoo import _, api, models, fields
 
 
 class AccountMove(models.Model):
@@ -12,6 +12,7 @@ class AccountMove(models.Model):
 
     _tier_validation_manual_config = False
 
+    abababab = fields.Char(string="abababab")
     @api.depends("need_validation")
     def _compute_hide_post_button(self):
         result = super()._compute_hide_post_button()
